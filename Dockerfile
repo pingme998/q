@@ -2,10 +2,11 @@ FROM kalilinux/kali-rolling
 EXPOSE 8080
 
 RUN apt update -y
+RUN mkdir /.config
+RUN mkdir /.config/rclone
 RUN apt install curl -y
 RUN apt install unrar -y
 RUN apt install wget -y
-
 RUN apt install unzip -y  && \
     curl -O https://downloads.rclone.org/rclone-current-linux-amd64.zip && \
     unzip rclone-current-linux-amd64.zip && \
