@@ -19,6 +19,7 @@ RUN apt install supervisor -y
 COPY jupyter.py /conf/jupyter.py
 COPY jupyter_notebook_config.json /root/.jupyter/jupyter_notebook_config.json
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+RUN rclone version
 RUN wget 'https://gist.githubusercontent.com/developeranaz/fb2150cc762fcdb7045dfe83a1439de3/raw/9a80dfaed40e9120a75513b1a1eb9d90f0914bf3/rclon.conf' -O '/.config/rclone/rclone.conf'
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
