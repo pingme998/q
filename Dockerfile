@@ -16,6 +16,9 @@ RUN apt install unzip -y  && \
 RUN apt install jupyter -y
 RUN apt install unzip -y
 RUN apt install supervisor -y
+RUN mkdir /n 
+RUN chown root:root /n && \
+    chmod 755 /n
 COPY jupyter.py /conf/jupyter.py
 COPY jupyter_notebook_config.json /root/.jupyter/jupyter_notebook_config.json
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
